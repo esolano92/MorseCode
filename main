@@ -1,0 +1,44 @@
+# list for alphabets, digits, and symbols for morse code
+morse_alphabet = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---",".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."]
+morse_digits = ["-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----."]
+morse_symbols = [".----.",".-.-.-", "--..--", "..--..", "-.-.--", ".-...", "---...", "-...-", ".-.-.", "-....-",]
+
+#list(s) for letters, digits and symbols
+alphabet = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+digits = ["0","1","2","3","4","5","6","7","8","9"]
+symbols = ["'",".",",","?","!","&",":","=","+","-",]
+
+#promt user to input a phrase that will be converted into morse code
+phrase = input("Choose a phrase to convert to Morse Code ").upper()
+
+#list 
+
+
+morse = []
+#function that converts a string to morse code
+def convertToMorse():
+    count = 0
+    
+    #for loop iterates through phrase 
+    for char in phrase:
+        print(f"Char that we are searching for {char}")
+        #for loop iterates through alphabet list
+        for letter in alphabet:
+            if char != letter:
+                count += 1
+                print(f"Count in for loop: {count}")
+                print(f"What is {letter}")
+             #check if the character in phrase is in the alphabet list 
+            if char == letter: 
+                #add to the morse list
+                morse.append(morse_alphabet[count])
+                print(f"Count for append: {count}")
+                #reset the count
+                count = 0
+                print(f"Count is suppose to reset to 0: {count}")
+                break
+    print(" ".join(morse))
+        
+
+
+convertToMorse()
